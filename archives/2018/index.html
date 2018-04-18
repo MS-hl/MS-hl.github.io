@@ -9,13 +9,16 @@
   
   <title>Archives: 2018 | HL_blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="欢迎来到hl的blog">
+<meta property="og:type" content="website">
 <meta property="og:title" content="HL_blog">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+<meta property="og:url" content="http://ms-hl.github.io/archives/2018/index.html">
 <meta property="og:site_name" content="HL_blog">
+<meta property="og:description" content="欢迎来到hl的blog">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HL_blog">
+<meta name="twitter:description" content="欢迎来到hl的blog">
   
     <link rel="alternative" href="/atom.xml" title="HL_blog" type="application/atom+xml">
   
@@ -59,64 +62,16 @@
 
         <a href="/" class="profilepic">
             
-            <img lazy-src="/img/avatar.png" class="js-avatar">
+            <img lazy-src="/img/linkedin.png" class="js-avatar">
             
         </a>
         <hgroup>
           <h1 class="header-author"><a href="/">HuangLian</a></h1>
         </hgroup>
         
-        
-            <form>
-                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
-            </form>
-            <div id="local-search-result"></div>
+        <p class="header-subtitle">hl</p>
         
         
-            <script type="text/javascript">
-                (function() {
-                    'use strict';
-                    function getMatchData(keyword, data) {
-                        var matchData = [];
-                        for(var i =0;i<data.length;i++){
-                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
-                                matchData.push(data[i])
-                        }
-                        return matchData;
-                    }
-                    var $input = $('#local-search-input');
-                    var $resultContent = $('#local-search-result');
-                    $input.keyup(function(){
-                        $.ajax({
-                            url: '/search.json',
-                            dataType: "json",
-                            success: function( json ) {
-                                var str='<ul class=\"search-result-list\">';                
-                                var keyword = $input.val().trim().toLowerCase();
-                                $resultContent.innerHTML = "";
-                                if ($input.val().trim().length <= 0) {
-                                    $resultContent.empty();
-                                    $('#switch-area').show();
-                                    return;
-                                }
-                                var results = getMatchData(keyword, json);
-                                if(results.length === 0){
-                                    $resultContent.empty();
-                                    $('#switch-area').show();
-                                    return;
-                                } 
-                                for(var i =0; i<results.length; i++){
-                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
-                                }
-                                str += "</ul>";
-                                $resultContent.empty();
-                                $resultContent.append(str);
-                                $('#switch-area').hide();
-                            }
-                        });
-                    });
-                })();
-            </script>
         
         
             <div id="switch-btn" class="switch-btn">
@@ -128,11 +83,6 @@
                         </div>
                         <div class="icon-wrap icon-ribbon hide" data-idx="1">
                             <div class="ribbon"></div>
-                        </div>
-                        
-                        <div class="icon-wrap icon-link hide" data-idx="2">
-                            <div class="loopback_l"></div>
-                            <div class="loopback_r"></div>
                         </div>
                         
                         
@@ -149,8 +99,6 @@
                         <li>菜单</li>
                         <li>标签</li>
                         
-                        <li>友情链接</li>
-                        
                         
                         <li>关于我</li>
                         
@@ -166,24 +114,14 @@
                         
                             <li><a  href="/archives/">所有文章</a></li>
                         
-                            <li><a  href="/categories/开发工具/">玩转开发工具</a></li>
-                        
-                            <li><a  href="/categories/digital">玩转数码</a></li>
-                        
-                            <li><a  href="/categories/algorithm">算法学习</a></li>
-                        
-                            <li><a  href="/about/">关于我</a></li>
-                        
                         </ul>
                     </nav>
                     <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fl github"  target="_blank" href="/xxxxx" title="github">github</a>
+                                <a class="fl github"  target="_blank" href="https://github.com/MS-hl/MS-hl.github.io" title="github">github</a>
                             
-                                <a class="fl weibo"  target="_blank" href="/xxxxxxxx" title="weibo">weibo</a>
-                            
-                                <a class="fl rss"  target="_blank" href="/atom.xml" title="rss">rss</a>
+                                <a class="fl weibo"  target="_blank" href="https://weibo.com/5327224611/profile?rightmod=1&wvr=6&mod=personinfo" title="weibo">weibo</a>
                             
                         </ul>
                     </nav>
@@ -196,21 +134,9 @@
                 </section>
                 
                 
+                
+                
                 <section class="switch-part switch-part3">
-                    <div id="js-friends">
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://blog.csdn.net/baidu_21483933">csdn</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://segmentfault.com/blog/maocg_web">segmentfault</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.jianshu.com/users/eb37ef89c746/latest_articles">简书</a>
-                    
-                    </div>
-                </section>
-                
-                
-                
-                <section class="switch-part switch-part4">
                 
                     <div id="js-aboutme">爱动漫,爱游戏,爱编程,爱运动,爱的太多了!</div>
                 </section>
@@ -231,25 +157,19 @@
         <header id="header" class="inner">
             <a href="/" class="profilepic">
                 
-                    <img lazy-src="/img/avatar.png" class="js-avatar">
+                    <img lazy-src="/img/linkedin.png" class="js-avatar">
                 
             </a>
             <hgroup>
               <h1 class="header-author"><a href="/" title="回到主页">HuangLian</a></h1>
             </hgroup>
             
+            <p class="header-subtitle">hl</p>
+            
             <nav class="header-menu">
                 <ul>
                 
                     <li><a href="/archives/">所有文章</a></li>
-                
-                    <li><a href="/categories/开发工具/">玩转开发工具</a></li>
-                
-                    <li><a href="/categories/digital">玩转数码</a></li>
-                
-                    <li><a href="/categories/algorithm">算法学习</a></li>
-                
-                    <li><a href="/about/">关于我</a></li>
                 
                 <div class="clearfix"></div>
                 </ul>
@@ -257,11 +177,9 @@
             <nav class="header-nav">
                 <div class="social">
                     
-                        <a class="github" target="_blank" href="/xxxxx" title="github">github</a>
+                        <a class="github" target="_blank" href="https://github.com/MS-hl/MS-hl.github.io" title="github">github</a>
                     
-                        <a class="weibo" target="_blank" href="/xxxxxxxx" title="weibo">weibo</a>
-                    
-                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                        <a class="weibo" target="_blank" href="https://weibo.com/5327224611/profile?rightmod=1&wvr=6&mod=personinfo" title="weibo">weibo</a>
                     
                 </div>
             </nav>
