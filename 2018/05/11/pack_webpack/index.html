@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="HL_blog">
 <meta property="og:description" content="1.创建文件夹1.npm init 初始化package.json, 同时下载webpack和webpack-cli123npm initnpm install webpack -gnpm install webpack webpack-cli -D 2.创建文件夹dist（用于存放打包后的文件bundle.js）3.index.html（使用script引入dist/bundle.js）12">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-11T06:19:36.301Z">
+<meta property="og:updated_time" content="2018-05-11T06:27:19.498Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用webpack进行打包">
 <meta name="twitter:description" content="1.创建文件夹1.npm init 初始化package.json, 同时下载webpack和webpack-cli123npm initnpm install webpack -gnpm install webpack webpack-cli -D 2.创建文件夹dist（用于存放打包后的文件bundle.js）3.index.html（使用script引入dist/bundle.js）12">
@@ -228,6 +228,10 @@
 <h3 id="2-创建文件夹dist（用于存放打包后的文件bundle-js）"><a href="#2-创建文件夹dist（用于存放打包后的文件bundle-js）" class="headerlink" title="2.创建文件夹dist（用于存放打包后的文件bundle.js）"></a>2.创建文件夹dist（用于存放打包后的文件bundle.js）</h3><h3 id="3-index-html（使用script引入dist-bundle-js）"><a href="#3-index-html（使用script引入dist-bundle-js）" class="headerlink" title="3.index.html（使用script引入dist/bundle.js）"></a>3.index.html（使用script引入dist/bundle.js）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;script src=&quot;./dist/bundle.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="4-main-js-写入一些js操作"><a href="#4-main-js-写入一些js操作" class="headerlink" title="4.main.js(写入一些js操作)"></a>4.main.js(写入一些js操作)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.getElementById(&apos;app&apos;).innerText = &apos;hello&apos;</span><br></pre></td></tr></table></figure>
 <h3 id="5-webpack-config-js（webpack配置）"><a href="#5-webpack-config-js（webpack配置）" class="headerlink" title="5.webpack.config.js（webpack配置）"></a>5.webpack.config.js（webpack配置）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const path = require(&apos;path&apos;)</span><br><span class="line">module.exports=&#123;</span><br><span class="line">    entry:&apos;./main.js&apos;,</span><br><span class="line">    output:&#123;</span><br><span class="line">        path:path.resolve(__dirname,&apos;dist&apos;),</span><br><span class="line">        filename:&apos;bundle.js&apos;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="2-配置package-json"><a href="#2-配置package-json" class="headerlink" title=" 2.配置package.json"></a> 2.配置package.json</h2><p>###配置package.json<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;webpack&quot;: &quot;webpack&quot;</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="3-运行打包"><a href="#3-运行打包" class="headerlink" title=" 3.运行打包"></a> 3.运行打包</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">执行npm run webpack</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -239,7 +243,7 @@
         <p><span>本文标题:</span><a  href="/2018/05/11/pack_webpack/">使用webpack进行打包</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 HuangLian 的个人博客">HuangLian</a></p>
         <p><span>发布时间:</span>2018年05月11日 - 14时01分</p>
-        <p><span>最后更新:</span>2018年05月11日 - 14时19分</p>
+        <p><span>最后更新:</span>2018年05月11日 - 14时27分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/05/11/pack_webpack/" title="使用webpack进行打包">http://ms-hl.github.io/2018/05/11/pack_webpack/</a>
             <span class="copy-path" data-clipboard-text="原文: http://ms-hl.github.io/2018/05/11/pack_webpack/　　作者: HuangLian" title=""></span>
@@ -252,6 +256,15 @@
 
 
 <nav id="article-nav">
+  
+    <a  href="/2018/05/11/git_order/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          git的基本命令
+        
+      </div>
+    </a>
   
   
     <a  href="/2018/04/27/hexo_github_blog/" id="article-nav-older" class="article-nav-link-wrap">
@@ -267,7 +280,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-创建文件夹"><span class="toc-number">1.</span> <span class="toc-text"> 1.创建文件夹</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-npm-init-初始化package-json-同时下载webpack和webpack-cli"><span class="toc-number">1.1.</span> <span class="toc-text">1.npm init 初始化package.json, 同时下载webpack和webpack-cli</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-创建文件夹dist（用于存放打包后的文件bundle-js）"><span class="toc-number">1.2.</span> <span class="toc-text">2.创建文件夹dist（用于存放打包后的文件bundle.js）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-index-html（使用script引入dist-bundle-js）"><span class="toc-number">1.3.</span> <span class="toc-text">3.index.html（使用script引入dist/bundle.js）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-main-js-写入一些js操作"><span class="toc-number">1.4.</span> <span class="toc-text">4.main.js(写入一些js操作)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-webpack-config-js（webpack配置）"><span class="toc-number">1.5.</span> <span class="toc-text">5.webpack.config.js（webpack配置）</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-创建文件夹"><span class="toc-number">1.</span> <span class="toc-text"> 1.创建文件夹</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-npm-init-初始化package-json-同时下载webpack和webpack-cli"><span class="toc-number">1.1.</span> <span class="toc-text">1.npm init 初始化package.json, 同时下载webpack和webpack-cli</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-创建文件夹dist（用于存放打包后的文件bundle-js）"><span class="toc-number">1.2.</span> <span class="toc-text">2.创建文件夹dist（用于存放打包后的文件bundle.js）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-index-html（使用script引入dist-bundle-js）"><span class="toc-number">1.3.</span> <span class="toc-text">3.index.html（使用script引入dist/bundle.js）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-main-js-写入一些js操作"><span class="toc-number">1.4.</span> <span class="toc-text">4.main.js(写入一些js操作)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-webpack-config-js（webpack配置）"><span class="toc-number">1.5.</span> <span class="toc-text">5.webpack.config.js（webpack配置）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-配置package-json"><span class="toc-number">2.</span> <span class="toc-text"> 2.配置package.json</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-运行打包"><span class="toc-number">3.</span> <span class="toc-text"> 3.运行打包</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -340,7 +353,9 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a  href="/2018/05/11/git_order/" title="上一篇: git的基本命令">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
@@ -349,7 +364,7 @@
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/05/11/pack_webpack/">使用webpack进行打包</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/27/hexo_github_blog/">使用hexo + github创建自己的博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/27/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/05/11/git_order/">git的基本命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/11/pack_webpack/">使用webpack进行打包</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/27/hexo_github_blog/">使用hexo + github创建自己的博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/27/hello-world/">Hello World</a></li></ul>
     
 <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 
