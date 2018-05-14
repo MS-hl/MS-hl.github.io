@@ -209,7 +209,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2018/05/14/createVueProject/">利用vue-cli脚手架创建vue项目</a>
+      <a  class="article-title" href="/2018/05/14/createVueProject/">利用vue-cli脚手架搭配element-ui创建vue项目</a>
     </h1>
   
 
@@ -220,9 +220,13 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="1-安装node-js"><a href="#1-安装node-js" class="headerlink" title="1.安装node.js"></a>1.安装node.js</h3><h3 id="2-安装webpack"><a href="#2-安装webpack" class="headerlink" title="2.安装webpack"></a>2.安装webpack</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install webpack -g</span><br></pre></td></tr></table></figure>
+        <hr>
+<h2 id="1-利用vue-cli脚手架创建vue项目"><a href="#1-利用vue-cli脚手架创建vue项目" class="headerlink" title=" 1.利用vue-cli脚手架创建vue项目"></a> 1.利用vue-cli脚手架创建vue项目</h2><h3 id="1-安装node-js"><a href="#1-安装node-js" class="headerlink" title="1.安装node.js"></a>1.安装node.js</h3><h3 id="2-安装webpack"><a href="#2-安装webpack" class="headerlink" title="2.安装webpack"></a>2.安装webpack</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install webpack -g</span><br></pre></td></tr></table></figure>
 <h3 id="3-安装vue-cli脚手架"><a href="#3-安装vue-cli脚手架" class="headerlink" title="3.安装vue-cli脚手架"></a>3.安装vue-cli脚手架</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-cli -g</span><br></pre></td></tr></table></figure>
 <h3 id="4-创建vue项目"><a href="#4-创建vue项目" class="headerlink" title="4.创建vue项目"></a>4.创建vue项目</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vue init webpack expice</span><br><span class="line">cd expice</span><br><span class="line">npm install</span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="2-使用element-ui"><a href="#2-使用element-ui" class="headerlink" title=" 2.使用element-ui"></a> 2.使用element-ui</h2><h3 id="1-安装element-ui"><a href="#1-安装element-ui" class="headerlink" title="1.安装element-ui"></a>1.安装element-ui</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install element-ui -S</span><br></pre></td></tr></table></figure>
+<h3 id="2-在vue项目中引入element-ui-在main-js中引入element-ui"><a href="#2-在vue项目中引入element-ui-在main-js中引入element-ui" class="headerlink" title="2.在vue项目中引入element-ui,在main.js中引入element-ui"></a>2.在vue项目中引入element-ui,在main.js中引入element-ui</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import ElementUI from &apos;element-ui&apos;</span><br><span class="line">import &apos;element-ui/lib/theme-chalk/index.css&apos;(样式必须引入)</span><br><span class="line">Vue.use(ElementUI)</span><br></pre></td></tr></table></figure>
       
     </div>
     
