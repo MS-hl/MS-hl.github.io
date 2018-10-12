@@ -191,6 +191,52 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-wechat_program" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2018/05/31/wechat_program/" class="article-date">
+      <time datetime="2018-05-31T06:14:57.675Z" itemprop="datePublished">2018-05-31</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<h2 id="title-创建微信小程序的步骤"><a href="#title-创建微信小程序的步骤" class="headerlink" title="title:创建微信小程序的步骤"></a>title:创建微信小程序的步骤</h2>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-canvas_shoot" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -376,6 +422,9 @@
 <h3 id="2-配置name和email"><a href="#2-配置name和email" class="headerlink" title="2.配置name和email"></a>2.配置name和email</h3> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;huanglian&quot;</span><br><span class="line">git config --global user.email &quot;10995380702@qq.com&quot;</span><br></pre></td></tr></table></figure>
 <h3 id="3-生成key"><a href="#3-生成key" class="headerlink" title="3.生成key"></a>3.生成key</h3> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C “1099538070@qq.com”</span><br></pre></td></tr></table></figure>
 <h3 id="4-查看key"><a href="#4-查看key" class="headerlink" title="4.查看key"></a>4.查看key</h3>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="4-git版本回退，以及本地git-commit撤销"><a href="#4-git版本回退，以及本地git-commit撤销" class="headerlink" title="4.git版本回退，以及本地git commit撤销"></a>4.git版本回退，以及本地git commit撤销</h2><h3 id="1-git版本回退，head指向修改"><a href="#1-git版本回退，head指向修改" class="headerlink" title="1.git版本回退，head指向修改"></a>1.git版本回退，head指向修改</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD^ 退回上一级</span><br><span class="line">git reset --hard HEAD^^ 退回上上一级</span><br></pre></td></tr></table></figure>
+<h2 id="2-git-commit-撤销"><a href="#2-git-commit-撤销" class="headerlink" title="2.git commit 撤销"></a>2.git commit 撤销</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard commit_id (不保留修改的)</span><br><span class="line">git reset commit_id (保留修改的)</span><br><span class="line">commit撤销的commit_id处不能有head指向该id</span><br></pre></td></tr></table></figure>
 
       
     </div>
