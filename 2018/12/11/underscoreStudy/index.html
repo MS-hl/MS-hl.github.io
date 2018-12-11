@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>underscore.js的基础知识1----数组操作方法 | HL_blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="数组Array1.  _.first(array，[n])返回数组第一个元素,n表示返回数组中前 n 个元素.123_.first([2,3,4,5])  =&amp;gt;  2_.first([2,3,4,5],2) =&amp;gt;  [2,3]_.first([2,3,4,5],10)  =&amp;gt; [2,3,4,5] 2.  _.last(array,[n])返回数组最后一个元素,n表示返回数组中">
+<meta property="og:type" content="article">
+<meta property="og:title" content="underscore.js的基础知识1----数组操作方法">
+<meta property="og:url" content="http://ms-hl.github.io/2018/12/11/underscoreStudy/index.html">
+<meta property="og:site_name" content="HL_blog">
+<meta property="og:description" content="数组Array1.  _.first(array，[n])返回数组第一个元素,n表示返回数组中前 n 个元素.123_.first([2,3,4,5])  =&amp;gt;  2_.first([2,3,4,5],2) =&amp;gt;  [2,3]_.first([2,3,4,5],10)  =&amp;gt; [2,3,4,5] 2.  _.last(array,[n])返回数组最后一个元素,n表示返回数组中">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-12-11T09:17:53.112Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="underscore.js的基础知识1----数组操作方法">
+<meta name="twitter:description" content="数组Array1.  _.first(array，[n])返回数组第一个元素,n表示返回数组中前 n 个元素.123_.first([2,3,4,5])  =&amp;gt;  2_.first([2,3,4,5],2) =&amp;gt;  [2,3]_.first([2,3,4,5],10)  =&amp;gt; [2,3,4,5] 2.  _.last(array,[n])返回数组最后一个元素,n表示返回数组中">
+  
+    <link rel="alternative" href="/atom.xml" title="HL_blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/linkedin.png" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">HuangLian</a></h1>
+        </hgroup>
+        
+        <p class="header-subtitle">hl</p>
+        
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/archives/">所有文章</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github"  target="_blank" href="https://github.com/MS-hl" title="github">github</a>
+                            
+                                <a class="fl weibo"  target="_blank" href="https://weibo.com/5327224611/profile?rightmod=1&wvr=6&mod=personinfo" title="weibo">weibo</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        
+                    </div>
+                </section>
+                
+                
+                
+                
+                <section class="switch-part switch-part3">
+                
+                    <div id="js-aboutme">爱动漫,爱游戏,爱编程,爱运动,爱的太多了!</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">HuangLian</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/linkedin.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">HuangLian</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">hl</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/MS-hl" title="github">github</a>
+                    
+                        <a class="weibo" target="_blank" href="https://weibo.com/5327224611/profile?rightmod=1&wvr=6&mod=personinfo" title="weibo">weibo</a>
+                    
+                </div>
+            </nav>
+        </header>
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-underscoreStudy" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2018/12/11/underscoreStudy/" class="article-date">
+      <time datetime="2018-12-11T03:15:21.727Z" itemprop="datePublished">2018-12-11</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      underscore.js的基础知识1----数组操作方法
+    </h1>
+  
+
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<h2 id="数组Array"><a href="#数组Array" class="headerlink" title=" 数组Array"></a> 数组Array</h2><h3 id="1-first-array，-n-返回数组第一个元素-n表示返回数组中前-n-个元素"><a href="#1-first-array，-n-返回数组第一个元素-n表示返回数组中前-n-个元素" class="headerlink" title="1.  _.first(array，[n])返回数组第一个元素,n表示返回数组中前 n 个元素."></a>1.  _.first(array，[n])返回数组第一个元素,n表示返回数组中前 n 个元素.</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">_.first([2,3,4,5])  =&gt;  2</span><br><span class="line">_.first([2,3,4,5],2) =&gt;  [2,3]</span><br><span class="line">_.first([2,3,4,5],10)  =&gt; [2,3,4,5]</span><br></pre></td></tr></table></figure>
+<h3 id="2-last-array-n-返回数组最后一个元素-n表示返回数组中后-n-个元素"><a href="#2-last-array-n-返回数组最后一个元素-n表示返回数组中后-n-个元素" class="headerlink" title="2.  _.last(array,[n])返回数组最后一个元素,n表示返回数组中后 n 个元素."></a>2.  _.last(array,[n])返回数组最后一个元素,n表示返回数组中后 n 个元素.</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">_.last([1,2,3,4,5]) =&gt; 5</span><br><span class="line">_.last([1,2,3,4,5],3) =&gt; [3,4,5]</span><br><span class="line">_.last([1,2,3,4,5],10) =&gt; [1,2,3,4,5]</span><br></pre></td></tr></table></figure>
+<h3 id="3-initial-array-n-返回数组中除了最后一个元素之外的数组-n表示从最后一个开始向前排除的元素个数"><a href="#3-initial-array-n-返回数组中除了最后一个元素之外的数组-n表示从最后一个开始向前排除的元素个数" class="headerlink" title="3.  _.initial(array,[n])返回数组中除了最后一个元素之外的数组,n表示从最后一个开始向前排除的元素个数"></a>3.  _.initial(array,[n])返回数组中除了最后一个元素之外的数组,n表示从最后一个开始向前排除的元素个数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">_.initial([1,2,3,4,5]) =&gt; [1,2,3,4]   默认相当于 _.initial(array,1)</span><br><span class="line">_.initial([1,2,3,4,5],2) =&gt; [1,2,3]</span><br><span class="line">_.initial([1,2,3,4,5],10) =&gt; []</span><br></pre></td></tr></table></figure>
+<h3 id="4-rest-array-n-返回数组中除了第一个元素之外的数组-n表示返回从第n个开始剩余的元素"><a href="#4-rest-array-n-返回数组中除了第一个元素之外的数组-n表示返回从第n个开始剩余的元素" class="headerlink" title="4.  _.rest(array,[n])返回数组中除了第一个元素之外的数组,n表示返回从第n个开始剩余的元素"></a>4.  _.rest(array,[n])返回数组中除了第一个元素之外的数组,n表示返回从第n个开始剩余的元素</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">_.rest([1,2,3,4,5]) =&gt; [2,3,4,5]</span><br><span class="line">_.rest([1,2,3,4,5],3) =&gt; [4,5]</span><br><span class="line">_.rest([1,2,3,4,5],10) =&gt; []</span><br></pre></td></tr></table></figure>
+<h3 id="5-flatten-array-shallow-将一个嵌套多层的数组-array（数组）转换为只有一层的数组。-如果你传递-shallow参数位true，数组将只减少一维的嵌套。"><a href="#5-flatten-array-shallow-将一个嵌套多层的数组-array（数组）转换为只有一层的数组。-如果你传递-shallow参数位true，数组将只减少一维的嵌套。" class="headerlink" title="5.  _.flatten(array,shallow) 将一个嵌套多层的数组 array（数组）转换为只有一层的数组。 如果你传递 shallow参数位true，数组将只减少一维的嵌套。"></a>5.  _.flatten(array,shallow) 将一个嵌套多层的数组 array（数组）转换为只有一层的数组。 如果你传递 shallow参数位true，数组将只减少一维的嵌套。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_.flatten([1,[2],[3,[[4]]) =&gt; [1,2,3,4]</span><br><span class="line">_.flatten([1,[2],[3,[[4]],true) =&gt; [1,2,3,[4]]  只减少一层</span><br></pre></td></tr></table></figure>
+<h3 id="6-without-array-values-返回一个删除所有values值后的-array副本"><a href="#6-without-array-values-返回一个删除所有values值后的-array副本" class="headerlink" title="6.  _.without(array,*values) 返回一个删除所有values值后的 array副本"></a>6.  _.without(array,*values) 返回一个删除所有values值后的 array副本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_.without([1,2,3,4,5]) =&gt; [1,2,3,4,5]</span><br><span class="line">_.without([1,2,3,4,5],1,3) =&gt; [2,4,5]</span><br></pre></td></tr></table></figure>
+<h3 id="7-union-arrays-返回传入的-arrays（数组）并集：按顺序返回，返回数组的元素是唯一的"><a href="#7-union-arrays-返回传入的-arrays（数组）并集：按顺序返回，返回数组的元素是唯一的" class="headerlink" title="7.  _.union(*arrays) 返回传入的 arrays（数组）并集：按顺序返回，返回数组的元素是唯一的"></a>7.  _.union(*arrays) 返回传入的 arrays（数组）并集：按顺序返回，返回数组的元素是唯一的</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_.union([1,9,18],[9,1,25],[27,38]) =&gt; [1,9,18,25,27,38]</span><br></pre></td></tr></table></figure>
+<h3 id="8-intersection-arrays-用数组形式返回arrays中共同的元素"><a href="#8-intersection-arrays-用数组形式返回arrays中共同的元素" class="headerlink" title="8.  _.intersection(*arrays) 用数组形式返回arrays中共同的元素"></a>8.  _.intersection(*arrays) 用数组形式返回arrays中共同的元素</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_.intersection([1,2,3],[1,3,5]) =&gt; [1,3]</span><br></pre></td></tr></table></figure>
+<h3 id="9-difference-array-others-但返回的值来自array参数数组，并且不存在于other-数组。"><a href="#9-difference-array-others-但返回的值来自array参数数组，并且不存在于other-数组。" class="headerlink" title="9.  _.difference(array,*others) 但返回的值来自array参数数组，并且不存在于other 数组。"></a>9.  _.difference(array,*others) 但返回的值来自array参数数组，并且不存在于other 数组。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_.difference([1,2,3,4,5],[2,4,6],[1]) =&gt; [3,5]</span><br></pre></td></tr></table></figure>
+<h3 id="10-uniq-array-去重，返回去重之后的数组"><a href="#10-uniq-array-去重，返回去重之后的数组" class="headerlink" title="10.  _.uniq(array)去重，返回去重之后的数组"></a>10.  _.uniq(array)去重，返回去重之后的数组</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_.uniq([1,2,3,3,2,1]) =&gt; [1,2,3]</span><br></pre></td></tr></table></figure>
+<h3 id="11-zip-arrays-将每个-arrays-中相应位置的值合并在一起"><a href="#11-zip-arrays-将每个-arrays-中相应位置的值合并在一起" class="headerlink" title="11.  _.zip(*arrays) 将每个 arrays 中相应位置的值合并在一起"></a>11.  _.zip(*arrays) 将每个 arrays 中相应位置的值合并在一起</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_.zip([1,2,3],[1,2,3],[1,2]) =&gt; [[1,1,1],[2,2,2],[3,3,undefined]]</span><br></pre></td></tr></table></figure>
+<h3 id="12-unzip-array-与-zip-arrays-相反，其第一元素个包含所有的输入数组的第一元素，其第二包含了所有的第二元素，依此类推。"><a href="#12-unzip-array-与-zip-arrays-相反，其第一元素个包含所有的输入数组的第一元素，其第二包含了所有的第二元素，依此类推。" class="headerlink" title="12.  .unzip(array)与.zip(*arrays)相反，其第一元素个包含所有的输入数组的第一元素，其第二包含了所有的第二元素，依此类推。"></a>12.  <em>.unzip(array)与</em>.zip(*arrays)相反，其第一元素个包含所有的输入数组的第一元素，其第二包含了所有的第二元素，依此类推。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_.unzip([[1,1,1],[2,2,2],[3,3,3]]) =&gt; [[1,2,3],[1,2,3],[1,2,3]]</span><br></pre></td></tr></table></figure>
+<h3 id="13-object-list-values-将数组转换为对象-传递任何一个单独-key-value-对的列表，或者一个键的列表和一个值得列表"><a href="#13-object-list-values-将数组转换为对象-传递任何一个单独-key-value-对的列表，或者一个键的列表和一个值得列表" class="headerlink" title="13.  _.object(list,[values]) 将数组转换为对象,传递任何一个单独[key, value]对的列表，或者一个键的列表和一个值得列表"></a>13.  _.object(list,[values]) 将数组转换为对象,传递任何一个单独[key, value]对的列表，或者一个键的列表和一个值得列表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">one:[key,value]列表   _.object([[1,2],[3,4],[5,6]]) =&gt; &#123;1:2,3:4,5:6&#125;</span><br><span class="line">two:键列表[],值列表[]  _.object([1,2,3],[4,5,6]) =&gt;&#123;1:4,2:5,3:6&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="14-chunk-array-length-将-array-分成多个数组，每个数组包含length-或更少的项"><a href="#14-chunk-array-length-将-array-分成多个数组，每个数组包含length-或更少的项" class="headerlink" title="14.  _.chunk(array,length) 将 array 分成多个数组，每个数组包含length 或更少的项"></a>14.  _.chunk(array,length) 将 array 分成多个数组，每个数组包含length 或更少的项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_.chunk([1,2,3,4,5],2) =&gt; [[1,2],[3,4],[5]]</span><br></pre></td></tr></table></figure>
+<h3 id="15-indexOf-array-value-返回在array中值为value的索引值-index"><a href="#15-indexOf-array-value-返回在array中值为value的索引值-index" class="headerlink" title="15.  _.indexOf(array,value) 返回在array中值为value的索引值(index)"></a>15.  _.indexOf(array,value) 返回在array中值为value的索引值(index)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_.indexOf([1,2,3,4,5],100) =&gt; -1</span><br><span class="line">_.indexOf([1,2,3,4,5],4) =&gt; 3</span><br></pre></td></tr></table></figure>
+<h3 id="16-lastIndexOf-array-value-fromIndex-返回value在该-array-中的从最后开始的索引值，如果value不存在-array中就返回-1-传递fromIndex将从你给定的索性值开始搜索。"><a href="#16-lastIndexOf-array-value-fromIndex-返回value在该-array-中的从最后开始的索引值，如果value不存在-array中就返回-1-传递fromIndex将从你给定的索性值开始搜索。" class="headerlink" title="16.  _.lastIndexOf(array,value, [fromIndex])返回value在该 array 中的从最后开始的索引值，如果value不存在 array中就返回-1,传递fromIndex将从你给定的索性值开始搜索。"></a>16.  _.lastIndexOf(array,value, [fromIndex])返回value在该 array 中的从最后开始的索引值，如果value不存在 array中就返回-1,传递fromIndex将从你给定的索性值开始搜索。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_.lastIndexOf([1,2,3,1,2,3,5],3) =&gt; 5</span><br></pre></td></tr></table></figure>
+<h3 id="17-sortedIndex-array-value-iteratee-context-二分查找方法进行查找value-如果提供-iteratee-函数，iterator将作为list排序的依据，包括你传递的value-。iterator也可以是字符串的属性名用来排序-比如length"><a href="#17-sortedIndex-array-value-iteratee-context-二分查找方法进行查找value-如果提供-iteratee-函数，iterator将作为list排序的依据，包括你传递的value-。iterator也可以是字符串的属性名用来排序-比如length" class="headerlink" title="17.  _.sortedIndex(array,value, [iteratee], [context]) 二分查找方法进行查找value,如果提供 iteratee 函数，iterator将作为list排序的依据，包括你传递的value 。iterator也可以是字符串的属性名用来排序(比如length)"></a>17.  _.sortedIndex(array,value, [iteratee], [context]) 二分查找方法进行查找value,如果提供 iteratee 函数，iterator将作为list排序的依据，包括你传递的value 。iterator也可以是字符串的属性名用来排序(比如length)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">_.sortedIndex([10, 20, 30, 40, 50], 35)  =&gt; 3</span><br><span class="line">var stooges = [&#123;name: &apos;moe&apos;, age: 40&#125;, &#123;name: &apos;curly&apos;, age: 60&#125;];</span><br><span class="line">_.sortedIndex(stooges, &#123;name: &apos;larry&apos;, age: 50&#125;, &apos;age&apos;)  =&gt; 1</span><br></pre></td></tr></table></figure>
+<h3 id="18-findIndex-array-predicate-content-类似于-indexOf，当predicate通过真检查时，返回第一个索引值；否则返回-1。"><a href="#18-findIndex-array-predicate-content-类似于-indexOf，当predicate通过真检查时，返回第一个索引值；否则返回-1。" class="headerlink" title="18.  .findIndex(array,predicate,[content]) 类似于.indexOf，当predicate通过真检查时，返回第一个索引值；否则返回-1。"></a>18.  <em>.findIndex(array,predicate,[content]) 类似于</em>.indexOf，当predicate通过真检查时，返回第一个索引值；否则返回-1。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_.findLastIndex([1,2,3,4,5],4)</span><br></pre></td></tr></table></figure>
+<h3 id="19-findLastIndex-array-predicate-content-和-findIndex类似，但反向迭代数组，当predicate通过真检查时，最接近末端的索引值将被返回。"><a href="#19-findLastIndex-array-predicate-content-和-findIndex类似，但反向迭代数组，当predicate通过真检查时，最接近末端的索引值将被返回。" class="headerlink" title="19.  .findLastIndex(array,predicate,[content]) 和.findIndex类似，但反向迭代数组，当predicate通过真检查时，最接近末端的索引值将被返回。"></a>19.  <em>.findLastIndex(array,predicate,[content]) 和</em>.findIndex类似，但反向迭代数组，当predicate通过真检查时，最接近末端的索引值将被返回。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var users = [&#123;&apos;id&apos;: 1, &apos;name&apos;: &apos;Bob&apos;, &apos;last&apos;: &apos;Brown&apos;&#125;,</span><br><span class="line">                &#123;&apos;id&apos;: 2, &apos;name&apos;: &apos;Ted&apos;, &apos;last&apos;: &apos;White&apos;&#125;,</span><br><span class="line">                &#123;&apos;id&apos;: 3, &apos;name&apos;: &apos;Frank&apos;, &apos;last&apos;: &apos;James&apos;&#125;,</span><br><span class="line">                &#123;&apos;id&apos;: 4, &apos;name&apos;: &apos;Ted&apos;, &apos;last&apos;: &apos;Jones&apos;&#125;];</span><br><span class="line">_.findLastIndex(user,&#123;name:&apos;Ted&apos;&#125;) =&gt; 3</span><br></pre></td></tr></table></figure>
+<h3 id="20-range-start-stop-step-一个用来创建整数灵活编号的列表的函数，便于each-和-map循环"><a href="#20-range-start-stop-step-一个用来创建整数灵活编号的列表的函数，便于each-和-map循环" class="headerlink" title="20.  _.range([start], stop, [step]) 一个用来创建整数灵活编号的列表的函数，便于each 和 map循环"></a>20.  _.range([start], stop, [step]) 一个用来创建整数灵活编号的列表的函数，便于each 和 map循环</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">_.range(10) =&gt; [0,1,2,3,4,5,6,7,8,9]</span><br><span class="line">_.range(1,10) =&gt; [1,2,3,4,5,6,7,8,9 ]  ([1,10))</span><br><span class="line">_.range(1,10,3) =&gt; [1,4,7]</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a  href="/2018/12/11/underscoreStudy/">underscore.js的基础知识1----数组操作方法</a></p>
+        <p><span>文章作者:</span><a  href="/" title="访问 HuangLian 的个人博客">HuangLian</a></p>
+        <p><span>发布时间:</span>2018年12月11日 - 11时15分</p>
+        <p><span>最后更新:</span>2018年12月11日 - 17时17分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/12/11/underscoreStudy/" title="underscore.js的基础知识1----数组操作方法">http://ms-hl.github.io/2018/12/11/underscoreStudy/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://ms-hl.github.io/2018/12/11/underscoreStudy/　　作者: HuangLian" title=""></span>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a  href="/2018/05/25/canvas_shoot/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">h5使用canvas进行绘图</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#数组Array"><span class="toc-number">1.</span> <span class="toc-text"> 数组Array</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-first-array，-n-返回数组第一个元素-n表示返回数组中前-n-个元素"><span class="toc-number">1.1.</span> <span class="toc-text">1.  _.first(array，[n])返回数组第一个元素,n表示返回数组中前 n 个元素.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-last-array-n-返回数组最后一个元素-n表示返回数组中后-n-个元素"><span class="toc-number">1.2.</span> <span class="toc-text">2.  _.last(array,[n])返回数组最后一个元素,n表示返回数组中后 n 个元素.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-initial-array-n-返回数组中除了最后一个元素之外的数组-n表示从最后一个开始向前排除的元素个数"><span class="toc-number">1.3.</span> <span class="toc-text">3.  _.initial(array,[n])返回数组中除了最后一个元素之外的数组,n表示从最后一个开始向前排除的元素个数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-rest-array-n-返回数组中除了第一个元素之外的数组-n表示返回从第n个开始剩余的元素"><span class="toc-number">1.4.</span> <span class="toc-text">4.  _.rest(array,[n])返回数组中除了第一个元素之外的数组,n表示返回从第n个开始剩余的元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-flatten-array-shallow-将一个嵌套多层的数组-array（数组）转换为只有一层的数组。-如果你传递-shallow参数位true，数组将只减少一维的嵌套。"><span class="toc-number">1.5.</span> <span class="toc-text">5.  _.flatten(array,shallow) 将一个嵌套多层的数组 array（数组）转换为只有一层的数组。 如果你传递 shallow参数位true，数组将只减少一维的嵌套。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-without-array-values-返回一个删除所有values值后的-array副本"><span class="toc-number">1.6.</span> <span class="toc-text">6.  _.without(array,*values) 返回一个删除所有values值后的 array副本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-union-arrays-返回传入的-arrays（数组）并集：按顺序返回，返回数组的元素是唯一的"><span class="toc-number">1.7.</span> <span class="toc-text">7.  _.union(*arrays) 返回传入的 arrays（数组）并集：按顺序返回，返回数组的元素是唯一的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-intersection-arrays-用数组形式返回arrays中共同的元素"><span class="toc-number">1.8.</span> <span class="toc-text">8.  _.intersection(*arrays) 用数组形式返回arrays中共同的元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-difference-array-others-但返回的值来自array参数数组，并且不存在于other-数组。"><span class="toc-number">1.9.</span> <span class="toc-text">9.  _.difference(array,*others) 但返回的值来自array参数数组，并且不存在于other 数组。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-uniq-array-去重，返回去重之后的数组"><span class="toc-number">1.10.</span> <span class="toc-text">10.  _.uniq(array)去重，返回去重之后的数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-zip-arrays-将每个-arrays-中相应位置的值合并在一起"><span class="toc-number">1.11.</span> <span class="toc-text">11.  _.zip(*arrays) 将每个 arrays 中相应位置的值合并在一起</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-unzip-array-与-zip-arrays-相反，其第一元素个包含所有的输入数组的第一元素，其第二包含了所有的第二元素，依此类推。"><span class="toc-number">1.12.</span> <span class="toc-text">12.  .unzip(array)与.zip(*arrays)相反，其第一元素个包含所有的输入数组的第一元素，其第二包含了所有的第二元素，依此类推。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-object-list-values-将数组转换为对象-传递任何一个单独-key-value-对的列表，或者一个键的列表和一个值得列表"><span class="toc-number">1.13.</span> <span class="toc-text">13.  _.object(list,[values]) 将数组转换为对象,传递任何一个单独[key, value]对的列表，或者一个键的列表和一个值得列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-chunk-array-length-将-array-分成多个数组，每个数组包含length-或更少的项"><span class="toc-number">1.14.</span> <span class="toc-text">14.  _.chunk(array,length) 将 array 分成多个数组，每个数组包含length 或更少的项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-indexOf-array-value-返回在array中值为value的索引值-index"><span class="toc-number">1.15.</span> <span class="toc-text">15.  _.indexOf(array,value) 返回在array中值为value的索引值(index)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-lastIndexOf-array-value-fromIndex-返回value在该-array-中的从最后开始的索引值，如果value不存在-array中就返回-1-传递fromIndex将从你给定的索性值开始搜索。"><span class="toc-number">1.16.</span> <span class="toc-text">16.  _.lastIndexOf(array,value, [fromIndex])返回value在该 array 中的从最后开始的索引值，如果value不存在 array中就返回-1,传递fromIndex将从你给定的索性值开始搜索。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17-sortedIndex-array-value-iteratee-context-二分查找方法进行查找value-如果提供-iteratee-函数，iterator将作为list排序的依据，包括你传递的value-。iterator也可以是字符串的属性名用来排序-比如length"><span class="toc-number">1.17.</span> <span class="toc-text">17.  _.sortedIndex(array,value, [iteratee], [context]) 二分查找方法进行查找value,如果提供 iteratee 函数，iterator将作为list排序的依据，包括你传递的value 。iterator也可以是字符串的属性名用来排序(比如length)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18-findIndex-array-predicate-content-类似于-indexOf，当predicate通过真检查时，返回第一个索引值；否则返回-1。"><span class="toc-number">1.18.</span> <span class="toc-text">18.  .findIndex(array,predicate,[content]) 类似于.indexOf，当predicate通过真检查时，返回第一个索引值；否则返回-1。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#19-findLastIndex-array-predicate-content-和-findIndex类似，但反向迭代数组，当predicate通过真检查时，最接近末端的索引值将被返回。"><span class="toc-number">1.19.</span> <span class="toc-text">19.  .findLastIndex(array,predicate,[content]) 和.findIndex类似，但反向迭代数组，当predicate通过真检查时，最接近末端的索引值将被返回。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#20-range-start-stop-step-一个用来创建整数灵活编号的列表的函数，便于each-和-map循环"><span class="toc-number">1.20.</span> <span class="toc-text">20.  _.range([start], stop, [step]) 一个用来创建整数灵活编号的列表的函数，便于each 和 map循环</span></a></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <section class="changyan" id="comments">
+  <!--<div id="uyan_frame"></div>-->
+  <div id="SOHUCS"></div>
+  <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
+  <script type="text/javascript">
+    window.changyan.api.config({
+      appid: 'xxxx',
+      conf: 'xxxxxxxxx'
+    });
+  </script>
+</section>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a  href="/2018/05/25/canvas_shoot/" title="下一篇: h5使用canvas进行绘图">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/12/11/underscoreStudy/">underscore.js的基础知识1----数组操作方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/25/canvas_shoot/">h5使用canvas进行绘图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/14/createVueProject/">利用vue-cli脚手架搭配element-ui创建vue项目</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/11/git_order/">git进行本地与远程创建连接</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/11/pack_webpack/">使用webpack进行打包</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/27/hexo_github_blog/">使用hexo + github创建自己的博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/27/hello-world/">Hello World</a></li></ul>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+    <script>
+        $(".post-list").addClass("toc-article");
+        // $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2018 HuangLian
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo &nbsp;&nbsp;</a><a href="https://github.com/maochunguang" target="_blank">Blog</a> by tommy
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >极客到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 1;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>
