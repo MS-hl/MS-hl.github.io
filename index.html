@@ -195,7 +195,7 @@
   
     <div class="article-meta">
       <a  href="/2019/02/21/vue-build/" class="article-date">
-      <time datetime="2019-02-21T02:15:52.819Z" itemprop="datePublished">2019-02-21</time>
+      <time datetime="2019-02-21T08:31:00.205Z" itemprop="datePublished">2019-02-21</time>
 </a>
 
     </div>
@@ -209,7 +209,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/02/21/vue-build/">vue build打包时的静态文件和路径问题解决</a>
+      <a  class="article-title" href="/2019/02/21/vue-build/">1.vue build打包时的静态文件和路径问题解决;2.vue中使用jquery</a>
     </h1>
   
 
@@ -221,10 +221,13 @@
       
           
         <hr>
-<h2 id="1-尽量将静态文件放到static文件夹下"><a href="#1-尽量将静态文件放到static文件夹下" class="headerlink" title=" 1.尽量将静态文件放到static文件夹下"></a> 1.尽量将静态文件放到static文件夹下</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">尽量将样式写在统一的css中</span><br></pre></td></tr></table></figure>
+<h2 id="1-vue-build打包时的静态文件和路径问题解决"><a href="#1-vue-build打包时的静态文件和路径问题解决" class="headerlink" title=" 1.vue build打包时的静态文件和路径问题解决;"></a> 1.vue build打包时的静态文件和路径问题解决;</h2><h4 id="1-尽量将静态文件放到static文件夹下"><a href="#1-尽量将静态文件放到static文件夹下" class="headerlink" title="1.尽量将静态文件放到static文件夹下"></a>1.尽量将静态文件放到static文件夹下</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">尽量将样式写在统一的css中</span><br></pre></td></tr></table></figure>
+<h4 id="2-修改config-index-js中的配置文件"><a href="#2-修改config-index-js中的配置文件" class="headerlink" title="2.修改config/index.js中的配置文件"></a>2.修改config/index.js中的配置文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">将build对象中的assetsPublicPath设置未assetsPublicPath: &apos;./&apos;(实际路径按情况而定)。</span><br></pre></td></tr></table></figure>
+<h4 id="3-修改build-utils-js中的配置文件"><a href="#3-修改build-utils-js中的配置文件" class="headerlink" title="3.修改build/utils.js中的配置文件"></a>3.修改build/utils.js中的配置文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">将cssLoaders方法中的generateLoaders方法中的if (options.extract) 下的publicPath改为publicPath:&apos;../../&apos;(实际路径按情况而定)。</span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="2-修改config-index-js中的配置文件"><a href="#2-修改config-index-js中的配置文件" class="headerlink" title=" 2.修改config/index.js中的配置文件"></a> 2.修改config/index.js中的配置文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">将build对象中的assetsPublicPath设置未assetsPublicPath: &apos;./&apos;(实际路径按情况而定)。</span><br></pre></td></tr></table></figure>
-<h2 id="3-修改build-utils-js中的配置文件"><a href="#3-修改build-utils-js中的配置文件" class="headerlink" title="3.修改build/utils.js中的配置文件"></a>3.修改build/utils.js中的配置文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">将cssLoaders方法中的generateLoaders方法中的if (options.extract) 下的publicPath改为publicPath:&apos;../../&apos;(实际路径按情况而定)。</span><br></pre></td></tr></table></figure>
+<h2 id="2-vue中引入jquery"><a href="#2-vue中引入jquery" class="headerlink" title=" 2.vue中引入jquery"></a> 2.vue中引入jquery</h2><h4 id="1-引入jquery"><a href="#1-引入jquery" class="headerlink" title="1.引入jquery"></a>1.引入jquery</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install jquery --save</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">在build目录下找到webpack.base.conf.js,添加代码:</span><br><span class="line">   var webpack = require(&apos;webpack&apos;)</span><br><span class="line">   plugins: [</span><br><span class="line">     new webpack.ProvidePlugin(&#123;</span><br><span class="line">       $: &quot;jquery&quot;,</span><br><span class="line">       jQuery: &quot;jquery&quot;,</span><br><span class="line">     &#125;)</span><br><span class="line">   ],</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">main.js里导入jQuery:</span><br><span class="line">    import &apos;jquery&apos;</span><br></pre></td></tr></table></figure>
       
     </div>
     
