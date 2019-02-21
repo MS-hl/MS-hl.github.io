@@ -191,6 +191,67 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-vue-build" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/02/21/vue-build/" class="article-date">
+      <time datetime="2019-02-21T02:15:52.819Z" itemprop="datePublished">2019-02-21</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/02/21/vue-build/">vue build打包时的静态文件和路径问题解决</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<h2 id="1-尽量将静态文件放到static文件夹下"><a href="#1-尽量将静态文件放到static文件夹下" class="headerlink" title=" 1.尽量将静态文件放到static文件夹下"></a> 1.尽量将静态文件放到static文件夹下</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">尽量将样式写在统一的css中</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="2-修改config-index-js中的配置文件"><a href="#2-修改config-index-js中的配置文件" class="headerlink" title=" 2.修改config/index.js中的配置文件"></a> 2.修改config/index.js中的配置文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">将build对象中的assetsPublicPath设置未assetsPublicPath: &apos;./&apos;(实际路径按情况而定)。</span><br></pre></td></tr></table></figure>
+<h2 id="3-修改build-utils-js中的配置文件"><a href="#3-修改build-utils-js中的配置文件" class="headerlink" title="3.修改build/utils.js中的配置文件"></a>3.修改build/utils.js中的配置文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">将cssLoaders方法中的generateLoaders方法中的if (options.extract) 下的publicPath改为publicPath:&apos;../../&apos;(实际路径按情况而定)。</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-underscoreStudy" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -694,7 +755,7 @@ hexo s
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
-                &copy; 2018 HuangLian
+                &copy; 2019 HuangLian
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank">Hexo &nbsp;&nbsp;</a><a href="https://github.com/maochunguang" target="_blank">Blog</a> by tommy
