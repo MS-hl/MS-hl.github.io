@@ -195,7 +195,7 @@
   
     <div class="article-meta">
       <a  href="/2019/06/17/docker_create/" class="article-date">
-      <time datetime="2019-06-17T01:28:10.570Z" itemprop="datePublished">2019-06-17</time>
+      <time datetime="2019-06-17T01:30:07.276Z" itemprop="datePublished">2019-06-17</time>
 </a>
 
     </div>
@@ -205,11 +205,22 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/17/docker_create/">docker的搭建</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
           
         <hr>
-<h2 id="title-docker的搭建"><a href="#title-docker的搭建" class="headerlink" title="  title:docker的搭建"></a>  title:docker的搭建</h2><hr>
 <h2 id="1-基础搭建"><a href="#1-基础搭建" class="headerlink" title="   1.基础搭建"></a>   1.基础搭建</h2><h3 id="获取最新版本的-Docker-安装包"><a href="#获取最新版本的-Docker-安装包" class="headerlink" title="获取最新版本的 Docker 安装包"></a>获取最新版本的 Docker 安装包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.wget -qO- https://get.docker.com/ | sh </span><br><span class="line">2.查看docker是否安装好：</span><br><span class="line">    sudo docker --version  </span><br><span class="line">    sudo docker info </span><br><span class="line">3.查看ip:sudo ifconfig -a</span><br></pre></td></tr></table></figure>
 <h3 id="卸载docker"><a href="#卸载docker" class="headerlink" title="卸载docker"></a>卸载docker</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.sudo apt-get remove  docker*会删除软件包而保留软件的配置文件，单个卸载</span><br><span class="line">2.sudo apt-get purge  docker*会同时清除软件包和软件的配置文件，单个卸载</span><br><span class="line">3.sudo apt-get remove docker docker-engine docker.io docker-ce 同时卸载多个文件 </span><br><span class="line">如果卸载不了，可能是docker-compose.yml文件没有删除</span><br></pre></td></tr></table></figure>
 <h3 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1.sudo touch  docker-compose.yml</span><br></pre></td></tr></table></figure>
