@@ -191,6 +191,72 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-vue_lifecycle_des" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/03/20/vue_lifecycle_des/" class="article-date">
+      <time datetime="2020-03-20T09:02:18.396Z" itemprop="datePublished">2020-03-20</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/03/20/vue_lifecycle_des/">vue生命周期理解</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<h2 id="1-vue生命周期"><a href="#1-vue生命周期" class="headerlink" title="   1.vue生命周期"></a>   1.vue生命周期</h2><h3 id="1-new-Vue"><a href="#1-new-Vue" class="headerlink" title="1.new Vue ()"></a>1.new Vue ()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.实例化一个Vue对象</span><br><span class="line">2.初始化事件(event)和生命周期(lifeCycle)</span><br></pre></td></tr></table></figure>
+<h3 id="2-beforeCreate"><a href="#2-beforeCreate" class="headerlink" title="2.beforeCreate()"></a>2.beforeCreate()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.在实例初始化之后，数据观测(data observer)和 event/watcher 事件配置之前被调用，</span><br><span class="line">（此时无法访问到数据ata，methods,computed等信息和el元素）</span><br></pre></td></tr></table></figure>
+<h3 id="2-created"><a href="#2-created" class="headerlink" title="2.created()"></a>2.created()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.实例已完成以下的配置：数据观测(data observer)，属性和方法的运算， watch/event 事件回调.</span><br><span class="line">  挂载阶段还没开始，$el 属性目前不可见</span><br><span class="line">（此时可以访问到数据data，methods,computed等信息，但是无法访问el元素，无法获取到通过挂载模板生成的DOM）</span><br></pre></td></tr></table></figure>
+<h3 id="3-beforeMount"><a href="#3-beforeMount" class="headerlink" title="3.beforeMount()"></a>3.beforeMount()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1.（编译模板，挂载dom）相关的 render 函数（模板）首次被调用，可以访问$el元素,但是无实际得内容；</span><br></pre></td></tr></table></figure>
+<h3 id="4-mounted"><a href="#4-mounted" class="headerlink" title="4.mounted()"></a>4.mounted()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1.（渲染）数据在页面中显示</span><br></pre></td></tr></table></figure>
+<h3 id="5-beforeUpdate"><a href="#5-beforeUpdate" class="headerlink" title="5.beforeUpdate()"></a>5.beforeUpdate()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.数据更新时调用，发生在虚拟 DOM 重新渲染和打补丁之前；</span><br><span class="line">（更改Vue的任何数据，都会触发该函数）</span><br></pre></td></tr></table></figure>
+<h3 id="6-updated"><a href="#6-updated" class="headerlink" title="6.updated()"></a>6.updated()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.数据更新完成；</span><br><span class="line">（当这个钩子被调用时，组件 DOM及其数据 已经更新）</span><br></pre></td></tr></table></figure>
+<h3 id="7-beforeDestory"><a href="#7-beforeDestory" class="headerlink" title="7.beforeDestory()"></a>7.beforeDestory()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1.Vue实例销毁之前调用</span><br></pre></td></tr></table></figure>
+<h3 id="8-destoryed"><a href="#8-destoryed" class="headerlink" title="8.destoryed()"></a>8.destoryed()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1.Vue 实例销毁完成后调用</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-docker_create" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -813,72 +879,10 @@ hexo s
 
 
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a  href="/2018/04/27/hello-world/" class="article-date">
-      <time datetime="2018-04-27T04:03:05.233Z" itemprop="datePublished">2018-04-27</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/04/27/hello-world/">Hello World</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 </div>
@@ -886,7 +890,7 @@ hexo s
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
-                &copy; 2019 HuangLian
+                &copy; 2020 HuangLian
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank">Hexo &nbsp;&nbsp;</a><a href="https://github.com/maochunguang" target="_blank">Blog</a> by tommy
